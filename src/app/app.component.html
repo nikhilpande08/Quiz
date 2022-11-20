@@ -1,0 +1,39 @@
+<div class="container">
+  <!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <span>Welcome</span>
+</div>
+  <div class="content">
+    Select one option and click next!!!
+    <div *ngFor="let question of allQuestions; index as i">
+      <div *ngIf="currentIndex === i">
+          <strong>Q: {{question.question}}</strong>
+            <mat-radio-group
+              aria-labelledby="example-radio-group-label"
+              class="example-radio-group">
+              <mat-radio-button class="example-radio-button" 
+                  *ngFor="let option of question.options; let i = index;"
+                  (change)="onSelectionChange(i)"
+                  [value]="option">
+                {{option}}
+              </mat-radio-button>
+            </mat-radio-group>
+          <hr>
+      </div>
+    </div>
+    <div class="example-button-row">
+      <button mat-raised-button (click)="nextQuestion()">Next</button>
+      <button mat-raised-button (click)="previoustQuestion()">Previous</button>
+    </div>
+  </div>
+</div>
+
+<ng-template #answerDialogue>
+  <h1 mat-dialog-title>Result</h1>
+  <div mat-dialog-content>
+    {{dialogueMessage}}
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button mat-dialog-close>Close</button>
+  </div>
+</ng-template>

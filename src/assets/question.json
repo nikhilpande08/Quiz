@@ -1,0 +1,12 @@
+[
+    {
+        "question": "India's Independence date?",
+        "options": ["15th August 1947", "14th August 1947", "15th August 1945", "14th August 1945"],
+        "answer": 0
+    },
+    {
+        "question": "India's President?",
+        "options": ["Ramath Kovind", "Draupadi Murmu", "Kalam", "Pranav"],
+        "answer": 1
+    }
+]
